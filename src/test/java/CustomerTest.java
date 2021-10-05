@@ -15,14 +15,18 @@ public class CustomerTest {
     Customer customer;
     Vehicle vehicle;
     Engine petrolEngine;
-    ArrayList<Vehicle> vehicles;
+    ArrayList<Vehicle> customerVehicles;
+    ArrayList<Vehicle> dealershipVehicles;
+    Dealership dealership;
 
     @Before
     public void before(){
         petrolEngine = new Engine(EngineType.PETROL);
         vehicle = new Car(2000, "Grey", petrolEngine);
-        vehicles = new ArrayList<Vehicle>();
-        customer = new Customer(6000, vehicles);
+        customerVehicles = new ArrayList<Vehicle>();
+        dealershipVehicles = new ArrayList<Vehicle>();
+        dealership = new Dealership(10000, dealershipVehicles);
+        customer = new Customer(6000, customerVehicles);
     }
 
     @Test
@@ -46,6 +50,16 @@ public class CustomerTest {
     public void customerCanBuyVehicle(){
         customer.buyVehicle(vehicle);
         assertEquals(1, customer.getVehicles().size());
+        assertEquals(4000, customer.getMoney());
+    }
+
+    @Test
+    public void customerCanByVehicleFromDealership(){
+        dealership.addVehicleToDealership(vehicle);
+        dealership.addVehicleToDealership(vehicle);
+        customer.buyVehicleFromDealership(vehicle, dealership);
+        assertEquals(1, customer.getVehicles().size());
+        assertEquals(1, dealership.getVehicles().size());
         assertEquals(4000, customer.getMoney());
     }
 }

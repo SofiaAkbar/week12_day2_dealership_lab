@@ -7,6 +7,7 @@ public class Customer implements IBuy {
 
     private int money;
     private ArrayList<Vehicle> vehicles;
+    private Dealership dealership;
 
     public Customer(int money, ArrayList<Vehicle> vehicles) {
         this.money = money;
@@ -29,4 +30,10 @@ public class Customer implements IBuy {
         this.money -= vehicle.getPrice();
         this.vehicles.add(vehicle);
     }
+
+    public void buyVehicleFromDealership(Vehicle vehicle, Dealership dealership){
+        dealership.sellVehicle(vehicle);
+        this.buyVehicle(vehicle);
+    }
+
 }

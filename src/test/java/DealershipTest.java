@@ -40,4 +40,21 @@ public class DealershipTest {
         dealership.addVehicleToDealership(vehicle);
         assertEquals(2, dealership.getVehicles().size());
     }
+
+    @Test
+    public void dealershipCanBuyVehicle(){
+        dealership.buyVehicle(vehicle);
+        dealership.buyVehicle(vehicle);
+        assertEquals(2, dealership.getVehicles().size());
+        assertEquals(6000, dealership.getTill());
+    }
+
+    @Test
+    public void dealershipCanSellVehicle(){
+        dealership.buyVehicle(vehicle);
+        dealership.buyVehicle(vehicle);
+        dealership.sellVehicle(vehicle);
+        assertEquals(1, dealership.getVehicles().size());
+        assertEquals(8000, dealership.getTill());
+    }
 }
