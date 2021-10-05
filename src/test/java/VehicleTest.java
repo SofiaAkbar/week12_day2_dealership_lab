@@ -76,4 +76,15 @@ public class VehicleTest {
         assertEquals("Red", hybridCar.getColour());
     }
 
+    @Test
+    public void hasNoDamage(){
+        assertEquals(0, car.getDamage());
+    }
+
+//    @Test
+//    public void canReportDamage(){
+//        car.reportDamage(200);
+//        assertEquals(1800, car.getPrice());
+//    }
+
 }
