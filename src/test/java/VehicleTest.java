@@ -75,5 +75,5 @@ public class VehicleTest {
     public void hybridCarHasColour(){
         assertEquals("Red", hybridCar.getColour());
     }
-    
+
 }

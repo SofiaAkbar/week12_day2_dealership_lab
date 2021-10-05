@@ -19,4 +19,8 @@ public class Dealership {
     public ArrayList<Vehicle> getVehicles() {
         return vehicles;
     }
+
+    public void addVehicleToDealership(Vehicle vehicle) {
+        this.vehicles.add(vehicle);
+    }
 }
