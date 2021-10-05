@@ -46,7 +46,34 @@ public class VehicleTest {
         assertEquals("Grey", car.getColour());
     }
 
+    @Test
+    public void electricCarHasEngine(){
+        assertEquals(EngineType.ELECTRIC, electricCar.getEngine().getEngineType());
+    }
+
+    @Test
+    public void electricCarHasPrice(){
+        assertEquals(4000, electricCar.getPrice());
+    }
+
+    @Test
+    public void electricCarHasColour(){
+        assertEquals("White", electricCar.getColour());
+    }
+
+    @Test
+    public void hybridCarHasEngine(){
+        assertEquals(EngineType.HYBRID, hybridCar.getEngine().getEngineType());
+    }
+
+    @Test
+    public void hybridCarHasPrice(){
+        assertEquals(3000, hybridCar.getPrice());
+    }
+
+    @Test
+    public void hybridCarHasColour(){
+        assertEquals("Red", hybridCar.getColour());
+    }
     
-
-
 }
